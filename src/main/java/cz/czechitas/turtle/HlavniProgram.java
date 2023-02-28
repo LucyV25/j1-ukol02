@@ -16,25 +16,25 @@ public class HlavniProgram {
         zofka.turnLeft(30);
         trojuhelnik(160, Color.black);
         zofka.setLocation(35.0,190.0);
-        kolecko(7, Color.black);
+        kolecko(23, 2,Color.black);
 
         //snehulak
         zofka.setLocation(300.0,100.0);
-        kolecko(4, Color.blue);
-        zofka.setLocation(280.0,230.0);
-        kolecko(6, Color.blue);
-        zofka.setLocation(260.0,400.0);
-        kolecko(8, Color.blue);
+        kolecko(18, 2,Color.blue);
+        zofka.setLocation(270.0,260.0);
+        kolecko(23, 2,Color.blue);
+        zofka.setLocation(250.0,480.0);
+        kolecko(27, 2,Color.blue);
         zofka.setLocation(220.0,200.0);
-        kolecko(2, Color.blue);
-        zofka.setLocation(410.0,200.0);
-        kolecko(2, Color.blue);
+        kolecko(10, 2,Color.blue);
+        zofka.setLocation(430.0,200.0);
+        kolecko(10, 2,Color.blue);
 
-        //masinka
+//        //masinka
         zofka.setLocation(800.0,400.0);
         zofka.turnRight(30);
         obdelnik(140,90, Color.red);
-        kolecko(4, Color.red);
+        kolecko(17, 2,Color.red);
         zofka.turnLeft(90);
         zofka.penUp();
         zofka.move(130);
@@ -47,11 +47,11 @@ public class HlavniProgram {
         zofka.penUp();
         zofka.move(20);
         zofka.penDown();
-        kolecko(2, Color.red);
+        kolecko(10, 2,Color.red);
         zofka.penUp();
         zofka.move(60);
         zofka.penDown();
-        kolecko(2, Color.red);
+        kolecko(10, 2,Color.red);
 
     }
 
@@ -91,11 +91,12 @@ public class HlavniProgram {
         }
     }
 
-    public void kolecko(double velikost, Color barva) {
+    public void kolecko(double pocetStran, double delkaStrany, Color barva) {
+        double uhel = 360d / pocetStran;
         zofka.setPenColor(barva);
-        for (int i = 0; i < 72; i++) {
-            zofka.move(velikost);
-            zofka.turnRight(5);
+        for (int i = 0; i < pocetStran; i++) {
+            zofka.move(pocetStran);
+            zofka.turnRight(uhel);
 
         }
     }
